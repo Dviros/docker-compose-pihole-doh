@@ -26,7 +26,13 @@ You should be able to log in to the pi-hole web interface at `http://<VIRTUAL_HO
 ## Updating
 
 Run the following commands to update the pi-hole container and it's dependencies:
+```bash
+mkdir -p ./var-log/lighttpd
+touch ./var-log/lighttpd/access.log
+touch ./var-log/lighttpd/error.log
+chmod -R 755 ./var-log/
 
+```
 1. `# docker-compose pull`
 1. `# docker-compose down`
 1. `# docker-compose up --detach`
